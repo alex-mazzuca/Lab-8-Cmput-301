@@ -48,4 +48,4 @@ before_script:
 
 #script:
 #  - ./gradlew clean build
-#  - ./gradlew test
+#  - ./gradlew test #

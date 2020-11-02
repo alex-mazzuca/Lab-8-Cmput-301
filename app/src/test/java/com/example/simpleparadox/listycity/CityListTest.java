@@ -28,4 +28,30 @@ class CityListTest {
         assertEquals(2, cityList.countCities());
         assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
     }
+    
+     @Test
+    void testDeleteCity() {
+        CityList cityList = mockCityList();
+
+        City city = new City("Calgary", "Alberta");
+        cityList.add(city);
+
+        assertEquals(2, cityList.countCities());
+
+        cityList.delete(mockCity());
+        assertEquals(1, cityList.countCities());
+        assertEquals(0, city.compareTo(cityList.getCities().get(0)));
+    }
+
+    @Test
+    void testDeleteException() {
+        CityList cityList = mockCityList();
+
+        cityList.delete(mockCity());
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(mockCity());
+        });
+    }
+    
 }

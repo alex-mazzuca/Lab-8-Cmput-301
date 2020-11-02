@@ -50,7 +50,7 @@ public class CityList {
 
         return false;
     }
-
+    
     /**
      * Delete the city from the list if it is there
      * @param city
@@ -68,6 +68,7 @@ public class CityList {
             }
         }
     }
+    
 
     /**
      * Return the size of the city list
